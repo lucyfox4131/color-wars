@@ -45,5 +45,18 @@ describe('Segment', function(){
       assert.equal(segment.head.child.y, 10)
       // assert.equal(segment.allBlocks().length, 2)
     })
+  });
+
+  context("can give all blocks in segment", function(){
+    it("returns an array of blocks", function(){
+      var segment = new Segment()
+      var options = {length: 2, startX: 10, startY: 10, orientation: "horizontal"}
+      segment.create(options)
+
+      var blocks = segment.allBlocks();
+      assert.equal(blocks.length, 2)
+      assert.equal(blocks[0].x, 10)
+      assert.equal(blocks[1].x, 20)
+    })
   })
 })
