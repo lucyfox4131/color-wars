@@ -41,6 +41,8 @@ describe('Segment', function(){
       assert.equal(segment.head.x, 10)
       assert.equal(segment.head.y, 10)
       assert.equal(segment.orientation, "horizontal")
+      var child = segment.head.child
+      assert.equal(child.parent, segment.head)
       assert.equal(segment.head.child.x, 20)
       assert.equal(segment.head.child.y, 10)
       // assert.equal(segment.allBlocks().length, 2)
