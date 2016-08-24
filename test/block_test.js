@@ -77,4 +77,20 @@ describe('Block', function(){
       assert.deepEqual(coordinates, [{x: 10, y: 10}, {x: 10, y: 11}, {x: 11, y: 10}, {x: 11, y: 11}])
     });
   });
+
+  context('knows if it contains coordinate', function(){
+    var block = new Block({x: 10, y: 10, width: 1, height: 1});
+
+    it('should return true if it contains given coordinate', function(){
+      var coord = {x: 10, y: 10};
+      var contains = block.contains(coord);
+      assert.equal(contains, true);
+    })
+
+    it('should return false if not contained', function(){
+      var coord = {x: 101, y: 113};
+      var contains = block.contains(coord);
+      assert.equal(contains, false);
+    })
+  })
 });
