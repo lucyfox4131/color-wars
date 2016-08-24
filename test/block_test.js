@@ -5,26 +5,34 @@ const Block = require('../lib/block.js');
 
 describe('Block', function(){
   context('with default attributes', function(){
-    var cell = new Block({});
+    var block = new Block({});
 
     it('should have an x value', function(){
-      assert.equal(cell.x, 0);
+      assert.equal(block.x, 0);
     });
 
     it('should have a y value', function(){
-      assert.equal(cell.y, 0);
+      assert.equal(block.y, 0);
     });
 
     it('should have a width value', function(){
-      assert.equal(cell.width, 10);
+      assert.equal(block.width, 10);
     });
 
     it('should have a height value', function(){
-      assert.equal(cell.height, 10);
+      assert.equal(block.height, 10);
     });
 
     it('should have a default shape value of false', function(){
-      assert.equal(cell.color, "grey");
+      assert.equal(block.color, "grey");
+    });
+
+    it('should have a default null child', function(){
+      assert.equal(block.child, null);
+    });
+
+    it('should have a default null parent', function(){
+      assert.equal(block.parent, null);
     });
   });
 
