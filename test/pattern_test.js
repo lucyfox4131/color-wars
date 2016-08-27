@@ -26,8 +26,8 @@ describe("Pattern", function(){
       assert.deepEqual(pattern.segmentDatas, [segmentOne, segmentTwo])
       pattern.build()
       assert.deepEqual(pattern.segments.length, 2)
-      // var segOne = pattern.segments[0]
-      // assert(pattern.segOne.head instanceof Block)
+      var segOne = pattern.segments[0]
+      assert(segOne.head instanceof Block)
     })
 
   })
