@@ -20,7 +20,7 @@ describe('Segment', function(){
     })
   });
 
-  context("can create a new segment", function(){
+  context("can create a new horizontal segment", function(){
     it("with one block", function(){
       var segment = new Segment()
       var options = {length: 1, startX: 10, startY: 10}
@@ -48,6 +48,34 @@ describe('Segment', function(){
       // assert.equal(segment.allBlocks().length, 2)
     })
   });
+
+  context("can create a new vertical segment", function(){
+    it ("with one block", function(){
+      var segment = new Segment()
+      var options = {length: 1, startX: 10, startY: 10, orientation: "vertical"}
+      segment.create(options)
+
+      assert.equal(segment.length, 1)
+      assert.equal(segment.head.x, 10)
+      assert.equal(segment.head.y, 10)
+      assert.equal(segment.orientation, "vertical")
+    })
+
+    it ("with two blocks", function(){
+      var segment = new Segment()
+      var options = {length: 2, startX: 10, startY: 10, orientation: "vertical"}
+      segment.create(options)
+
+      assert.equal(segment.length, 2)
+      assert.equal(segment.head.x, 10)
+      assert.equal(segment.head.y, 10)
+      assert.equal(segment.orientation, "vertical")
+      assert.equal(segment.head.child.x, 10)
+      assert.equal(segment.head.child.y, 20)
+      var child = segment.head.child
+      assert.equal(child.parent, segment.head)
+    })
+  })
 
   context("can give all blocks in segment", function(){
     it("returns an array of blocks", function(){
