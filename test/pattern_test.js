@@ -21,13 +21,15 @@ describe("Pattern", function(){
     it("and builds the segments", function(){
       var segmentOne = {startX: 10, startY:10, length: 5, orientation: "horizontal"}
       var segmentTwo = {startX: 10, startY:10, length: 5, orientation: "vertical"}
-      var options = {segments: [segmentOne, segmentTwo] }
+      var connections = [{x: 10, y: 10}]
+      var options = {segments: [segmentOne, segmentTwo], connections: connections }
       var pattern = new Pattern(options)
       assert.deepEqual(pattern.segmentDatas, [segmentOne, segmentTwo])
       pattern.build()
       assert.deepEqual(pattern.segments.length, 2)
       var segOne = pattern.segments[0]
       assert(segOne.head instanceof Block)
+      assert.deepEqual(pattern.connections, [{x: 10, y: 10}])
     })
 
   })
