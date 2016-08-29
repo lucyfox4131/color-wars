@@ -7,13 +7,20 @@
 
 </head>
 <body>
-  <canvas id="document" width="500px" height="500px"></canvas>
-  <canvas id="scoresCanvas" width="500" height="100"></canvas>
+  <div id="game-div">
+    <canvas id="document" width="500px" height="500px"></canvas>
+    <!-- <canvas id="scoresCanvas" width="500" height="100"></canvas> -->
+
+  </div>
   <div id="game-start">
-    <h1>This is the game start divvvvv</h1>
+    <h1>Welcome to Color Wars</h1>
     <button id="start-btn" name="button">Start Game!</button>
   </div>
-  <img src="images/level1.jpg" id="level1"  style="display: none;"/>
+
+  <div id="level-up">
+    <h1>Nice Job! Level Up?</h1>
+    <button id="level-up-btn" name="button">Next Level</button>
+  </div>
   <script src="main.bundle.js"></script>
 </body>
 </html>
