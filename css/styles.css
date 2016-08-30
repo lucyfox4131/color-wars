@@ -3,7 +3,7 @@
 }
 
 #game-start h1 {
-  color: blue;
+  color: #2BFDC9;
 }
 
 #game-div {
@@ -19,9 +19,37 @@
 }
 
 #level-up h1 {
-  color: blue;
+  color: #2BFDC9;
+}
+
+.btn {
+ background: #FF0066 ;
+ background-image: -webkit-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -moz-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -ms-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -o-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: linear-gradient(to bottom, #FF0066 , #FDB12B );
+ -webkit-border-radius: 28;
+ -moz-border-radius: 28;
+ border-radius: 28px;
+ font-family: "Raleway", sans-serif;
+ color: #ffffff ;
+ font-size: 20px;
+ padding: 10px 20px 10px 20px;
+ text-decoration: none;
+}
+
+.btn:hover {
+ background: #FF0066 ;
+ background-image: -webkit-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -moz-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -ms-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -o-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: linear-gradient(to bottom, #FF0066 , #2BFDC9 );
+ text-decoration: none;
 }
 
 body {
-  background-color: #F5F3EE;
+  background-color: #718D91;
+  font-family: 'Dosis', sans-serif;
 }
