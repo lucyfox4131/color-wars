@@ -1,0 +1,13 @@
+#game-start {
+  text-align: center;
+}
+
+#game-start h1 {
+  color: blue;
+}
+
+#game-div {
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
