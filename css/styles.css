@@ -11,3 +11,17 @@
   padding: 100px 0;
   margin-bottom: 50px;
 }
+
+#level-up{
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
+
+#level-up h1 {
+  color: blue;
+}
+
+body {
+  background-color: #F5F3EE;
+}
