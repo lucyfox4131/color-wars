@@ -4,17 +4,24 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
-  <title>Game Time</title>
+  <title>Color Wars</title>
 
 </head>
 <body>
   <div id="game-div">
-    <canvas id="document" width="500px" height="500px"></canvas>
-    <hr>
-    <!-- <canvas id="scoresCanvas" width="500" height="100"></canvas> -->
+    <div class="scoreboard">
+      <h1 class="scores">Scoreboard</h1>
+      <p id="scores"></p>
+    </div>
+    <div class="canvas-elements">
+      <canvas id="document" width="500px" height="500px"></canvas>
+      <br>
+      <hr>
+      <canvas id="scoresCanvas" width="500" height="100"></canvas>
+    </div>
 
   </div>
-  <div id="game-start">
+  <div id="game-start" class="magic-center">
     <h1>Welcome to Color Wars</h1>
     <button class="btn" id="start-btn" name="button">Start Game!</button>
     <button class="btn" id="instructions-btn" name="button">Instructions</button>
@@ -22,8 +29,24 @@
 
   <div id="level-up">
     <h1>Nice Job! Level Up?</h1>
-    <button id="level-up-btn" name="button">Next Level</button>
+    <h3>Your Score: </h3>
+    <h3>Computer Score: </h3>
+    <button class="btn" id="level-up-btn" name="button">Next Level</button>
   </div>
+
+  <div id="instructions" class="magic-center">
+    <h1>Color Wars</h1>
+    <p>
+      A board will be rendered on the screen. The board will have either one, or multiple blocks colored in. These are the computer's colors. Click anywhere on the board, except where the computer spots have already been placed. As soon as you select your spot, the colors race to fill the board. The more you win by, the higher your score. Will you win? Try it out!
+    </p>
+    <button class="btn" id="got-it" name="button">Got it!</button>
+  </div>
+
+  <div id="game-over" class="magic-center">
+    <h1>Game Over :( </h1>
+    <h3>Your Score: </h3>
+  </div>
+
   <script src="main.bundle.js"></script>
 </body>
 </html>
