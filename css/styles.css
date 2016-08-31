@@ -2,24 +2,36 @@
   text-align: center;
 }
 
-#game-start h1 {
+#game-div, #instructions, #level-up, #game-over {
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
+
+h1 {
   color: #2BFDC9;
 }
 
+h3 {
+  color: #2BFDC9;
+  text-shadow: 1px 1px 2px #718D91, 0 0 25px #FDB12B, 0 0 5px #FF0066;
+}
+
+#level-up h1, #game-over h1 {
+  text-shadow: 1px 1px 2px #718D91, 0 0 25px #FDB12B, 0 0 5px #FF0066;
+}
 #game-div {
-  text-align: center;
-  padding: 100px 0;
-  margin-bottom: 50px;
+  display: flex;
 }
 
-#level-up{
-  text-align: center;
-  padding: 100px 0;
-  margin-bottom: 50px;
+.scoreboard {
+  width: 25%;
 }
-
-#level-up h1 {
-  color: #2BFDC9;
+.canvas-elements {
+  width: 75%;
+}
+.scores {
+  color: #718D91;
 }
 
 .btn {
@@ -52,4 +64,11 @@
 body {
   background-color: #718D91;
   font-family: 'Dosis', sans-serif;
+}
+
+.magic-center {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 45%;
+  left: 50%;
 }
