@@ -45,19 +45,6 @@ describe("Pattern", function(){
         compBlocks.forEach(function(block){
           assert(block.color !== "grey");
         });
-
-      // it("does not place comp blocks in the same square", function(){
-      //   var segmentOne = {startX: 10, startY:10, length: 1, orientation: "horizontal"};
-      //   var segmentTwo = {startX: 10, startY:10, length: 1, orientation: "vertical"};
-      //   var connections = [{x: 10, y: 10}];
-      //   var options = {segments: [segmentOne, segmentTwo], connections: connections };
-      //   var pattern = new Pattern(options);
-      //   var blocks = pattern.blocks();
-      //   var compColors = ["blue", "magenta"];
-      //   var compBlocks = pattern.placeCompBlocks(blocks, compColors);
-      //
-      //
-      // })
       });
     });
   });
