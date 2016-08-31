@@ -46,7 +46,7 @@ describe('Block', function(){
       assert.equal(block.height, 40);
       assert.equal(block.color, "blue");
     });
-  })
+  });
 
   context('with some attributes given', function(){
     var block = new Block({x: 10, y: 10, width: 40});
@@ -79,10 +79,10 @@ describe('Block', function(){
 
     it('should return a single coordinates', function(){
       assert.equal(coordinates.length, 4);
-    })
+    });
 
     it('should return correct coordinates', function(){
-      assert.deepEqual(coordinates, [{x: 10, y: 10}, {x: 10, y: 11}, {x: 11, y: 10}, {x: 11, y: 11}])
+      assert.deepEqual(coordinates, [{x: 10, y: 10}, {x: 10, y: 11}, {x: 11, y: 10}, {x: 11, y: 11}]);
     });
   });
 
@@ -93,12 +93,23 @@ describe('Block', function(){
       var coord = {x: 10, y: 10};
       var contains = block.contains(coord);
       assert.equal(contains, true);
-    })
+    });
 
     it('should return false if not contained', function(){
       var coord = {x: 101, y: 113};
       var contains = block.contains(coord);
       assert.equal(contains, false);
-    })
-  })
+    });
+  });
+
+  context("can change the color of its neighbor block", function(){
+    it("to its own color", function(){
+      var currentBlock = new Block({x: 10, y: 10, color: "green"});
+      var neighbor     = new Block({x: 10, y: 20, color: "blue"});
+      currentBlock.changeNeighborColor(neighbor);
+      assert.equal(neighbor.color, currentBlock.color);
+    });
+  });
+
+
 });
