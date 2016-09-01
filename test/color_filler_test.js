@@ -1,7 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const Segment = require('../lib/segment.js');
 const Pattern = require('../lib/pattern.js');
 const ColorFiller = require('../lib/color_filler.js');
 
@@ -13,7 +12,6 @@ describe("Color Filler", function(){
     var options = {segments: [optionsOne, optionsTwo], connections: [connection]};
     var pattern = new Pattern(options);
     var segments = pattern.segments;
-    var segment = segments[0]
     var block = segments[0].head;
     var filler = new ColorFiller(block, pattern);
 
