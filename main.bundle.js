@@ -42,15 +42,73 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	var helper = __webpack_require__(1);
 
-	var sayHello = function sayHello() {
-	  return console.log('Hello');
+	var canvas = document.getElementById("document");
+	var context = canvas.getContext("2d");
+
+	var dots = [];
+
+	for (j = 200; j <= 330; j++) {
+	  dots.push(new Dot(170, j, 10));
+	}
+
+	function Dot(x, y, width, color = "grey") {
+	  this.x = x;
+	  this.y = y;
+	  this.width = width;
+	  this.sAngle = 0;
+	  this.eAngle = 2 * Math.PI;
+	  this.color = color;
+	  this.down = true;
 	};
 
-	sayHello();
+	Dot.prototype.draw = function () {
+	  context.beginPath();
+	  context.arc(this.x, this.y, this.width, this.sAngle, this.eAngle, false);
+	  context.fillStyle = this.color;
+	  context.fill();
+	  return this;
+	};
+
+	// var dot = dots[Math.floor(Math.random()*dots.length)];
+	// new Dot(dot.x, dot.y, 10, "red")
+
+	requestAnimationFrame(function drawDots() {
+	  dots.forEach(function (dot) {
+	    dot.draw();
+	  });
+	  requestAnimationFrame(drawDots);
+	});
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	var getClickPosition = function (e) {
+	  function getPosition(element) {
+	    var xPosition = 0;
+	    var yPosition = 0;
+
+	    while (element) {
+	      xPosition += element.offsetLeft - element.scrollLeft + element.clientLeft;
+	      yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+	      element = element.offsetParent;
+	    }
+
+	    return { x: xPosition, y: yPosition };
+	  }
+
+	  var parentPosition = getPosition(e.currentTarget);
+	  var xPosition = e.clientX - parentPosition.x;
+	  var yPosition = e.clientY - parentPosition.y;
+
+	  return { x: xPosition, y: yPosition };
+	};
+
+	module.exports = getClickPosition;
 
 /***/ }
 /******/ ]);

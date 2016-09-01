@@ -2,9 +2,50 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Game Time</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+  <title>Color Wars</title>
+
 </head>
 <body>
+  <div id="game-div">
+    <div class="scoreboard">
+      <h1 class="scores">Scoreboard</h1>
+      <p id="scores"></p>
+    </div>
+    <div class="canvas-elements">
+      <canvas id="document" width="500px" height="500px"></canvas>
+      <br>
+      <canvas id="scoresCanvas" width="500" height="100"></canvas>
+    </div>
+
+  </div>
+  <div id="game-start" class="magic-center">
+    <h1>Welcome to Color Wars</h1>
+    <button class="btn" id="start-btn" name="button">Start Game!</button>
+    <button class="btn" id="instructions-btn" name="button">Instructions</button>
+  </div>
+
+  <div id="level-up">
+    <h1>Nice Job! Level Up?</h1>
+    <button class="btn" id="level-up-btn" name="button">Next Level</button>
+  </div>
+
+  <div id="instructions" class="magic-center">
+    <h1>Color Wars</h1>
+    <p>
+      Each level is a pattern with two computer colors on the board. Place your dot of color on the board (you're orange!), and watch the colors race to fill in the pattern.
+      To win the level, place your color so that it takes up the majority of the pattern when it expands.
+      The more room your color takes up, the more points you win.
+      Will you be a Color Wars champion? Try it out!
+    </p>
+    <button class="btn" id="got-it" name="button">Got it!</button>
+  </div>
+
+  <div id="game-over" class="magic-center">
+    <h1>Game Over! </h1>
+    <button class="btn" id="replay-btn" name="button">Replay</button>
+  </div>
 
   <script src="main.bundle.js"></script>
 </body>

@@ -1,0 +1,74 @@
+#game-start {
+  text-align: center;
+}
+
+#game-div, #instructions, #level-up, #game-over {
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
+
+h1 {
+  color: #2BFDC9;
+}
+
+h3 {
+  color: #2BFDC9;
+  text-shadow: 1px 1px 2px #718D91, 0 0 25px #FDB12B, 0 0 5px #FF0066;
+}
+
+#level-up h1, #game-over h1 {
+  text-shadow: 1px 1px 2px #718D91, 0 0 25px #FDB12B, 0 0 5px #FF0066;
+}
+#game-div {
+  display: flex;
+}
+
+.scoreboard {
+  width: 25%;
+}
+.canvas-elements {
+  width: 75%;
+}
+.scores {
+  color: #718D91;
+}
+
+.btn {
+ background: #FF0066 ;
+ background-image: -webkit-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -moz-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -ms-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: -o-linear-gradient(top, #FF0066 , #FDB12B );
+ background-image: linear-gradient(to bottom, #FF0066 , #FDB12B );
+ -webkit-border-radius: 28;
+ -moz-border-radius: 28;
+ border-radius: 28px;
+ font-family: "Raleway", sans-serif;
+ color: #ffffff ;
+ font-size: 20px;
+ padding: 10px 20px 10px 20px;
+ text-decoration: none;
+}
+
+.btn:hover {
+ background: #FF0066 ;
+ background-image: -webkit-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -moz-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -ms-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: -o-linear-gradient(top, #FF0066 , #2BFDC9 );
+ background-image: linear-gradient(to bottom, #FF0066 , #2BFDC9 );
+ text-decoration: none;
+}
+
+body {
+  background-color: #718D91;
+  font-family: 'Dosis', sans-serif;
+}
+
+.magic-center {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+}
