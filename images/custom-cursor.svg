@@ -1,0 +1,25 @@
+<?xml version="1.0"?><svg width="410.66666666666663" height="138.66666666666666" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>purple circle</title>
+ <defs>
+  <linearGradient id="linearGradient1759">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0" id="stop1760"/>
+   <stop stop-color="#ffffff" offset="1" id="stop1761"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1755">
+   <stop stop-color="#db0d87" offset="0" id="stop1756"/>
+   <stop stop-color="#76064b" offset="1" id="stop1757"/>
+  </linearGradient>
+  <linearGradient y2="0.99059" y1="0.009408" xlink:href="#linearGradient1755" x2="0.505159" x1="0.505159" id="linearGradient1686"/>
+  <linearGradient y2="-0.001496" y1="0.990351" xlink:href="#linearGradient1755" x2="0.508599" x1="0.508599" id="linearGradient1754"/>
+  <linearGradient y2="-0.171429" y1="0.371429" xlink:href="#linearGradient1759" x2="0.481229" x1="0.481229" id="linearGradient1762"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g id="g5828">
+    <rect fill="#ff7f00" fill-rule="nonzero" stroke="url(#linearGradient1686)" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" y="16.956397" x="94.6374" width="109.52905" ry="56.143105" rx="57.582676" id="rect1061" height="113.72585"/>
+    <rect fill="#ff7f00" fill-rule="nonzero" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" y="35.607353" x="97.437173" width="102.092587" ry="38.80648" rx="48.225491" id="rect1758" height="80.668518"/>
+   </g>
+  </g>
+ </g>
+</svg>
