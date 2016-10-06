@@ -49,7 +49,6 @@
 	var Game = __webpack_require__(2);
 	var fillCanvas = document.getElementById('scoresCanvas');
 	var domManager = __webpack_require__(12);
-	var game;
 
 	setUpStartScreen();
 
@@ -67,7 +66,7 @@
 
 	function kickOffGame() {
 	  domManager.kickOffGame();
-	  game = new Game(canvas, fillCanvas);
+	  var game = new Game(canvas, fillCanvas);
 	  game.start();
 	}
 
@@ -75,10 +74,8 @@
 	  domManager.toggleInstructions();
 	}
 
-	$('#game-over').on('click', '#replay-btn', function () {
-	  $('#game-over').hide();
-	  domManager.startScreen();
-	  kickOffGame();
+	$('#game-over').bind('click', '#replay-btn', function () {
+	  window.location.replace('/');
 	});
 
 /***/ },
@@ -10188,11 +10185,13 @@
 
 	Game.prototype.start = function () {
 	  domManager.gameStartScores();
+	  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	  this.board.renderLevelPattern(this.currentLevel, this.context);
 	  listenForUserClick(this);
 	};
 
 	Game.prototype.renderNext = function () {
+	  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	  this.board.renderLevelPattern(this.currentLevel, this.context);
 	};
 
@@ -27541,7 +27540,6 @@
 	function youLost() {
 	  $(scoreBoard).html("").append("Oh shoot you lost this level, try again<br>");
 	}
-
 	module.exports = domManager;
 
 /***/ }

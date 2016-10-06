@@ -60,6 +60,9 @@ h3 {
  background-image: linear-gradient(to bottom, #FF0066 , #2BFDC9 );
  text-decoration: none;
 }
+#replay-btn {
+  height: 50px;
+}
 
 body {
   background-color: #718D91;
