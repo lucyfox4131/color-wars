@@ -74,10 +74,6 @@
 	  domManager.toggleInstructions();
 	}
 
-	$('#game-over').bind('click', '#replay-btn', function () {
-	  window.location.replace('/');
-	});
-
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -10168,8 +10164,6 @@
 	var ColorFiller = __webpack_require__(9);
 	var _ = __webpack_require__(10);
 	var domManager = __webpack_require__(12);
-	let win = new Audio('audio/tada.mp3');
-	let loose = new Audio('audio/sad.mp3');
 
 	function Game(canvas, fillCanvas, level = 0) {
 	  localStorage.currentScore = 0;
@@ -10184,15 +10178,11 @@
 	}
 
 	Game.prototype.start = function () {
+	  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	  this.board.renderLevelPattern(this.currentLevel, this.context);
 	  domManager.gameStartScores();
-	  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-	  this.board.renderLevelPattern(this.currentLevel, this.context);
+	  this.fillContext.clearRect(0, 0, this.fillCanvas.width, this.fillCanvas.height);
 	  listenForUserClick(this);
-	};
-
-	Game.prototype.renderNext = function () {
-	  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-	  this.board.renderLevelPattern(this.currentLevel, this.context);
 	};
 
 	Game.prototype.nextLevel = function () {
@@ -10208,10 +10198,9 @@
 
 	function listenForLevelUpClick(game) {
 	  $("body").on('click', "#level-up-btn", function () {
-	    game.fillContext.clearRect(0, 0, game.fillCanvas.width, game.fillCanvas.height);
 	    game.currentLevel += 1;
 	    domManager.levelUpClickSequence();
-	    game.renderNext();
+	    game.start();
 	  });
 	}
 
@@ -10220,6 +10209,7 @@
 	function listenForUserClick(game) {
 	  game.fillContext.clearRect(0, 0, game.fillCanvas.width, game.fillCanvas.height);
 	  game.canvas.addEventListener('click', function (event) {
+	    game.fillContext.clearRect(0, 0, game.fillCanvas.width, game.fillCanvas.height);
 	    var blocks = game.board.allBlocks();
 	    var click = helper(event);
 	    var compBlocks = game.board.compBlocks;
@@ -10262,7 +10252,6 @@
 
 	Game.prototype.endGameSequence = function (counts, total) {
 	  if (counts[0] > counts[1] && counts[0] > counts[2]) {
-	    win.play();
 	    calculateFinalScores(counts[0], total, this);
 	  } else {
 	    looseSequence(this);
@@ -10270,7 +10259,6 @@
 	};
 
 	function looseSequence(game) {
-	  loose.play();
 	  domManager.youLost();
 	  setTimeout(game.start(), 1000);
 	}
@@ -10313,6 +10301,7 @@
 	    localStorage.highScore = localStorage.currentScore;
 	  }
 	}
+
 	module.exports = Game;
 
 /***/ },
@@ -10595,7 +10584,7 @@
 	var levelTen = { segments: [{ startX: 20, startY: 10, length: 40, orientation: "horizontal" }, { startX: 20, startY: 10, length: 40, orientation: "vertical" }, { startX: 410, startY: 10, length: 40, orientation: "vertical" }, { startX: 20, startY: 400, length: 40, orientation: "horizontal" }, { startX: 20, startY: 100, length: 13, orientation: "horizontal" }, { startX: 290, startY: 100, length: 13, orientation: "horizontal" }, { startX: 140, startY: 100, length: 5, orientation: "vertical" }, { startX: 290, startY: 100, length: 5, orientation: "vertical" }, { startX: 90, startY: 140, length: 6, orientation: "horizontal" }, { startX: 290, startY: 140, length: 6, orientation: "horizontal" }, { startX: 90, startY: 100, length: 5, orientation: "vertical" }, { startX: 340, startY: 100, length: 5, orientation: "vertical" }, { startX: 20, startY: 300, length: 10, orientation: "horizontal" }, { startX: 320, startY: 300, length: 10, orientation: "horizontal" }, { startX: 320, startY: 300, length: 3, orientation: "vertical" }, { startX: 110, startY: 300, length: 3, orientation: "vertical" }, { startX: 110, startY: 320, length: 22, orientation: "horizontal" }],
 	                    connections: [{ x: 410, y: 10 }, { x: 20, y: 10 }, { x: 20, y: 400 }, { x: 410, y: 400 }, { x: 20, y: 100 }, { x: 410, y: 100 }, { x: 140, y: 100 }, { x: 290, y: 100 }, { x: 140, y: 140 }, { x: 290, y: 140 }, { x: 90, y: 100 }, { x: 90, y: 140 }, { x: 340, y: 100 }, { x: 340, y: 140 }, { x: 20, y: 300 }, { x: 410, y: 300 }, { x: 320, y: 300 }, { x: 110, y: 300 }, { x: 110, y: 320 }, { x: 320, y: 320 }] };
 
-	module.exports = [levelOne, levelTwo, levelThree, levelFour, levelFive, levelSix, levelSeven, levelEight, levelNine, levelTen];
+	module.exports = [levelOne, levelThree, levelNine, levelFour, levelTen, levelTwo, levelFive, levelSix, levelSeven, levelEight];
 
 /***/ },
 /* 9 */
@@ -27510,7 +27499,7 @@
 	}
 
 	function gameStartScores() {
-	  $(scoreBoard).append("High Score: " + highScore + "<br>Current Score: " + localStorage.currentScore + "<br>Keep playing for a new high score.");
+	  $(scoreBoard).html("").append("High Score: " + highScore + "<br>Current Score: " + localStorage.currentScore + "<br>Keep playing for a new high score.");
 	}
 
 	function nextLevel() {
@@ -27540,6 +27529,7 @@
 	function youLost() {
 	  $(scoreBoard).html("").append("Oh shoot you lost this level, try again<br>");
 	}
+
 	module.exports = domManager;
 
 /***/ }
