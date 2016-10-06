@@ -1,5 +1,8 @@
 # COLOR WARS
-Place your color and watch 'em race! Color wars is a game that requires a little luck, and a little strategy. Each level will render a new game board. Place your color somewhere within the board. As soon as you do, your color and the computer color will race to fill up the board. Which ever color covers most of the board wins the level. 
+
+[Play The Game!](https://lucyfox4131.github.io/color-wars/)
+
+Place your color and watch 'em race! Color wars is a game that requires a little luck, and a little strategy. Each level will render a new game board. Place your color (orange) somewhere within the board. As soon as you do, your color and the computer colors (blue, pink) will race to fill up the board. Which ever color covers most of the board wins the level. 
 
 # Game Time Starter Kit
 
