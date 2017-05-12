@@ -4,6 +4,8 @@ Place your color and watch 'em race! Color wars is a game that requires a little
 
 [Play The Game!](https://lucyfox4131.github.io/color-wars/)
 
+![Color Wars](http://i.imgur.com/3aqwkLn.png?1)
+
 ## Technologies 
 * JavaScript
 * HTML5 Canvas
